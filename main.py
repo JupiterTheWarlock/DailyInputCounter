@@ -122,27 +122,25 @@ def main():
         
         # 尝试导入GUI模块（延迟导入避免在权限检查前初始化tkinter）
         try:
-            from gui.main_window import MainWindow
-            logging.info("GUI模块导入成功")
+            from gui.mvp_window import MVPWindow
+            logging.info("MVP GUI模块导入成功")
             
-            # 创建并启动主窗口
-            logging.info("启动主窗口...")
-            app = MainWindow()
+            # 创建并启动MVP窗口
+            logging.info("启动MVP窗口...")
+            app = MVPWindow()
             app.run()
             
         except ImportError as e:
-            logging.info(f"GUI模块尚未实现: {e}")
-            print("✅ 基础架构创建完成！")
-            print("📝 接下来需要实现GUI模块和核心功能模块")
-            print("🔧 配置系统正常工作")
-            print(f"📁 数据目录: {config.get_data_path()}")
-            print(f"⚙️  配置文件: {config.config_file}")
+            logging.error(f"MVP GUI模块导入失败: {e}")
+            print("❌ MVP GUI模块导入失败！")
+            print(f"错误详情: {e}")
+            print("🔧 请检查依赖是否正确安装")
+            return 1
             
-            # 测试配置保存
-            if config.save_config():
-                print("💾 配置保存测试成功")
-            else:
-                print("❌ 配置保存测试失败")
+        except Exception as e:
+            logging.error(f"MVP窗口运行失败: {e}")
+            print(f"❌ MVP窗口运行失败: {e}")
+            return 1
         
         logging.info("程序正常退出")
         return 0

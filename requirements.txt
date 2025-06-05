@@ -1,24 +1,11 @@
-# 核心依赖库
+# MVP最小依赖 - DailyInputCounter AI率统计器
+# 仅保留核心功能所需依赖，追求极速开发
+
+# 键盘监听库 - MVP核心依赖
 pynput>=1.7.6
 
-# 数据处理
-pandas>=1.5.0
-numpy>=1.21.0
-
-# 数据可视化
-matplotlib>=3.6.0
-seaborn>=0.11.0
-
-# 日志管理
-loguru>=0.6.0
-
-# 系统交互
-psutil>=5.9.0
-
-# Windows特定库（仅Windows需要）
-pywin32>=304; sys_platform == "win32"
-
-# 开发工具 (可选)
-pytest>=7.0.0
-black>=22.0.0
-flake8>=5.0.0 
+# 注意：其他依赖已移除，专注MVP开发
+# - SQLite: Python标准库自带
+# - tkinter: Python标准库自带  
+# - winreg: Python标准库自带
+# - logging: Python标准库自带 
