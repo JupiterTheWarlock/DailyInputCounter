@@ -1,0 +1,24 @@
+# 核心依赖库
+pynput>=1.7.6
+
+# 数据处理
+pandas>=1.5.0
+numpy>=1.21.0
+
+# 数据可视化
+matplotlib>=3.6.0
+seaborn>=0.11.0
+
+# 日志管理
+loguru>=0.6.0
+
+# 系统交互
+psutil>=5.9.0
+
+# Windows特定库（仅Windows需要）
+pywin32>=304; sys_platform == "win32"
+
+# 开发工具 (可选)
+pytest>=7.0.0
+black>=22.0.0
+flake8>=5.0.0 
